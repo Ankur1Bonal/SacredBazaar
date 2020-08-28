@@ -1,0 +1,59 @@
+drop database if exists MAR_JAVA;
+create database MAR_JAVA;
+use MAR_JAVA;
+
+create table CUSTOMER
+(
+CUST_ID varchar(10) primary key,
+FIRST_NAME varchar(20) not null,
+LAST_NAME varchar(20),
+GENDER varchar(10),
+AGE int(3),
+CONTACT_NUMBER bigint(10),
+EMAIL_ID varchar(30),
+PASSWORD varchar(15),
+DATE_JOINED date,
+OFFER_CODE varchar(15),
+OFFER_DESC varchar(100),
+OFFER_VALIDITY date,
+LOG char(1)
+);
+
+create table INVENTORY
+(
+PROD_ID varchar(10) primary key,
+PRODUCT_NAME varchar(30) not null,
+BRAND_NAME varchar(20),
+CATEGORY varchar(20),
+PRICE int(10),
+PROD_DESC varchar(100),
+MANUF_DATE date,
+EXP_DATE date,
+MANUF_DETAILS varchar(50),
+QUANTITY int(3),
+OFFER_CODE varchar(15),
+OFFER_DESC varchar(100),
+OFFER_VALIDITY date
+);
+
+create table CART
+(
+CUST_ID varchar(10),
+PROD_ID varchar(10),
+QUANT int(2)
+);
+
+
+create table TRANSACTION
+(
+TARNSACT_ID varchar(10) primary key,
+CUST_ID varchar(10),
+TRANSACT_DATE date,
+AMOUNT int(9)
+);
+
+insert into CUSTOMER values('C1001','Jyotirmay','Mishra','Male',19,9876543210,'jyotirmay.mishra121@gmail.com','mishra1234','2016-01-01','','',null,'N');
+insert into CUSTOMER values('C1002','Mohd Rafey','Tarafdar','Male',20,9876543211,'rafey.taraf121@gmail.com','rafey1234','2016-05-03','','',null,'N');
+insert into CUSTOMER values('C1003','Mayank','Chaurasia','Male',19,9876543212,'mayank.chaurasia121@gmail.com','chaurasia1234','2017-07-21','','',null,'N');
+insert into CUSTOMER values('C1004','Ravinder','Sokhal','Male',19,9876543213,'ravinder.sokhal121@gmail.com','sokhal1234','2018-02-09','','',null,'N');
+
